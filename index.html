@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Surprise Vista Solutions | Premium Business Building</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.1);
+      --muted: #64748b;
+      --bg: #ffffff;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(at 0% 0%, hsla(20,100%,98%,1) 0, transparent 50%), 
+                        radial-gradient(at 100% 100%, hsla(210,100%,98%,1) 0, transparent 50%);
+      color: var(--primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media(min-width: 900px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 140px 24px 100px;
+      }
+    }
+
+    .logo-container {
+      flex-shrink: 0;
+    }
+
+    header img {
+      height: 120px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+    }
+
+    .header-text h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin: 0 0 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      display: inline-block;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .desc {
+      max-width: 600px;
+      font-size: 20px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ---------------- SECTIONS ---------------- */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), transparent);
+      opacity: 0.3;
+    }
+
+    /* ---------------- BUSINESS CARDS ---------------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      border-radius: 32px;
+      padding: 60px 40px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 80px -20px rgba(15, 23, 42, 0.1);
+      border-color: var(--accent-soft);
+    }
+
+    .card img {
+      height: 70px;
+      margin-bottom: 32px;
+      object-fit: contain;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* ---------------- PRINCIPLES ---------------- */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .principle-item {
+      padding: 30px;
+      background: rgba(255,255,255,0.5);
+      border-left: 3px solid var(--accent);
+      font-weight: 600;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+    
+    .principle-item:hover {
+      background: var(--accent-soft);
+    }
+
+    /* ---------------- CTA ---------------- */
+    .cta-wrap {
+      background: var(--primary);
+      color: white;
+      margin-top: 100px;
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .cta-wrap p {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 300;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 20px 48px;
+      border-radius: 100px;
+      font-weight: 700;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(249, 115, 22, 0.5);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      padding: 60px 24px;
+      background: #000;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Animations */
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-container" data-fade>
+    <img src="assets/sv-group.png" alt="Surprise Vista Solutions Logo">
+  </div>
+
+  <div class="header-text" data-fade style="animation-delay: 0.2s;">
+    <span class="tagline">Building businesses, the right way</span>
+    <h1>Surprise Vista Solutions</h1>
+    <p class="desc">
+      We design and grow product-led businesses with clarity, 
+      ethics, and long-term intent. Building foundations for 
+      independence and responsibility.
+    </p>
+  </div>
+</header>
+
+<section>
+  <h2 data-fade>Our Portfolio</h2>
+
+  <div class="cards">
+    <div class="card" data-fade style="animation-delay: 0.3s;">
+      <img src="assets/worklens.png" alt="WorkLens Logo">
+      <h3>WorkLens</h3>
+      <p>
+        A B2B SaaS platform focused on workforce visibility and trust. 
+        Built for organizations that value clarity.
+      </p>
+    </div>
+
+    <div class="card" data-fade style="animation-delay: 0.4s;">
+      <img src="assets/gifting.png" alt="Surprise Vista Gifting Logo">
+      <h3>Surprise Vista Gifting</h3>
+      <p>
+        A thoughtful gifting platform focused on emotion, 
+        personalization, and meaningful experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 data-fade>Core Principles</h2>
+  <div class="principles-grid">
+    <div class="principle-item" data-fade style="animation-delay: 0.1s;">Product before hype</div>
+    <div class="principle-item" data-fade style="animation-delay: 0.2s;">Ethics over shortcuts</div>
+    <div class="principle-item" data-fade style="animation-delay: 0.3s;">Focus over fragmentation</div>
+    <div class="principle-item" data-fade style="animation-delay: 0.4s;">Systems over dependency</div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <p>Ready to build something meaningful?</p>
+  <a href="mailto:info@surprisevista.com" class="cta-btn">Partner with us</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>© Surprise Vista Solutions</div>
+    <div>www.surprisevista.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
